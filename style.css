@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap");
+
+* {
+    font-family: "Cairo", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Responsive Container */
+.container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Effects */
+.btn-soft {
+    transition: all 0.3s ease;
+}
+
+.btn-soft:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-soft:active {
+    transform: translateY(0);
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #e5e7eb;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Modal Animation */
+.modal-animation {
+    animation: modalFade 0.3s ease-out;
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toast Animation */
+.toast-animation {
+    animation: toastFade 0.3s ease-out;
+}
+
+@keyframes toastFade {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Tab Content Animation */
+.tab-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Text Colors */
+.text-muted {
+    color: #6c757d;
+}
+
+.accent-green {
+    color: #27ae60;
+}
+
+.accent-blue {
+    color: #3498db;
+}
+
+.accent-purple {
+    color: #9b59b6;
+}
+
+.accent-orange {
+    color: #e67e22;
+}
+
+.accent-teal {
+    color: #1abc9c;
+}
+
+.accent-red {
+    color: #e74c3c;
+}
+
+/* Toast Container */
+#toastContainer {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    pointer-events: none;
+    max-width: 300px;
+}
+
+.toast-item {
+    animation: toastFade 0.3s ease-out;
+    min-width: 200px;
+    background: white;
+    color: #333;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-right: 4px solid #27ae60;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Text Direction */
+.direction-ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* Monospace Font */
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .grid-cols-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .grid-cols-3 {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    
+    .grid-cols-2 {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    
+    .flex-wrap {
+        flex-direction: column;
+    }
+    
+    .flex-wrap > div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #toastContainer {
+        right: 10px;
+        left: 10px;
+        align-items: center;
+        top: 70px;
+    }
+    
+    .toast-item {
+        min-width: auto;
+        width: calc(100% - 20px);
+        max-width: 300px;
+    }
+    
+    /* Header responsive */
+    header .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
+    header .flex.items-center.justify-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    header .flex.items-center.gap-2 {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Font sizes for mobile */
+    h1 {
+        font-size: 1.25rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    h4 {
+        font-size: 1rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 2rem !important;
+    }
+    
+    .text-3xl {
+        font-size: 1.75rem !important;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .text-xl {
+        font-size: 1.25rem !important;
+    }
+    
+    .text-lg {
+        font-size: 1.125rem !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .grid-cols-6 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    #toastContainer {
+        right: 15px;
+        top: 75px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Focus Styles */
+:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Responsive Utilities */
+.hidden-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hidden-mobile {
+        display: inline;
+    }
+    
+    .hidden-desktop {
+        display: none;
+    }
+}
+
+/* Responsive spacing */
+.p-responsive {
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .p-responsive {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-responsive {
+        padding: 2rem;
+    }
+}
+
+/* Safe area insets for mobile */
+.safe-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-left {
+    padding-left: env(safe-area-inset-left);
+}
+
+.safe-right {
+    padding-right: env(safe-area-inset-right);
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Touch-friendly buttons */
+.touch-button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive images */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card-hover {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* Landscape mode fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+    .min-h-screen {
+        min-height: auto;
+    }
+    
+    .py-8 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    .py-12 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+/* أنيميشن للوقت الحرج */
+@keyframes countdownPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse-critical {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.critical-pulse {
+    animation: pulse-critical 2s infinite;
+}
+
+/* تنسيق خاص للعد التنازلي */
+.countdown-box {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+}
+
+/* تنسيق الوقت المتبقي */
+.time-unit {
+    display: inline-block;
+    text-align: center;
+    min-width: 60px;
+}
+
+.time-unit .number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.time-unit .label {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* تأثيرات للوقت الحرج (أقل من 5 دقائق) */
+.critical-time {
+    animation: criticalPulse 0.5s infinite alternate;
+}
+
+@keyframes criticalPulse {
+    from { background-color: #fee2e2; }
+    to { background-color: #fecaca; }
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 640px) {
+    .time-unit {
+        min-width: 50px;
+    }
+    
+    .time-unit .number {
+        font-size: 1.25rem;
+    }
+    
+    .time-unit .label {
+        font-size: 0.7rem;
+    }
+    
+    .hide-seconds-on-mobile {
+        display: none;
+    }
+}
+
+/* أنماط لمؤقت الصلاة القادمة */
+.next-prayer-highlight {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* أنماط لعرض الثواني */
+.seconds-display {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
